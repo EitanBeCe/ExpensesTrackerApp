@@ -7,6 +7,12 @@
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  animation: fadein 1s;
+  transition: all 1s ease-out;
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .new-expense button {

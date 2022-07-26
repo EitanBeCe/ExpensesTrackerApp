@@ -11,27 +11,25 @@ const NewExpense = (props) => {
       id: Math.random().toString(),
     };
     props.onAddExpense(expenseData);
+    setIsEditing(false);
   };
 
-	const openEditExpense = () => {
+  const openEditExpense = () => {
     setIsEditing(true);
   };
-  const closeEditExpense = (formIsClicked) => {
-    setIsEditing(formIsClicked);
+  const closeEditExpense = () => {
+    setIsEditing(false);
   };
-
-  if (isEditing === false) {
-    return (
-      <div className="new-expense">
-        <button onClick={openEditExpense}>Add New Expense</button>
-      </div>
-    );
-  }
 
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} 
-										closeEditExpense={closeEditExpense}/>
+      {!isEditing && <button onClick={openEditExpense}>Add New Expense</button>}
+      {isEditing && (
+        <ExpenseForm
+          onSaveExpenseData={saveExpenseDataHandler}
+          closeEditExpense={closeEditExpense}
+        />
+      )}
     </div>
   );
 };
