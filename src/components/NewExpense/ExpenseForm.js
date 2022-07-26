@@ -17,7 +17,7 @@ const ExpenseForm = (props) => {
 		setEnteredDate(e.target.value);
 	};
 
-	const submitHandler = e => {
+	const submitHandler = (e) => {
 		e.preventDefault();
 
 		const expenseData = {
@@ -31,7 +31,12 @@ const ExpenseForm = (props) => {
 		setEnteredAmount('');
 		setEnteredDate('');
 		setEnteredTitle('');
+
+		props.closeEditExpense(false);
 	};
+
+
+	
 
   return (
 		<form onSubmit={submitHandler}>

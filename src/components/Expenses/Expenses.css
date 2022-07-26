@@ -1,7 +1,15 @@
 .expenses {
   padding: 1rem;
+  /* min-height: 0; */
   background-color: rgb(31, 31, 31);
   margin: 2rem auto;
   width: 50rem;
   max-width: 95%;
+  /* transition: height 4s, transform 2s; */
+
+  /* animation: fadein 1s; */
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
