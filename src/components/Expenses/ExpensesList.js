@@ -2,7 +2,7 @@ import "./ExpensesList.css";
 import ExpenseItem from "./ExpenseItem";
 
 const ExpensesList = ({ filteredExpenses }) => {
-  if (filteredExpenses.length === 0) {
+  if (!filteredExpenses.length) {
     return <h2 className="expenses-list__fallback">No expeses in this period</h2>
   }
 
