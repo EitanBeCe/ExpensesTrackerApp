@@ -2,9 +2,9 @@ import React from "react";
 
 import "./ExpensesFilter.css";
 
-const ExpensesFilter = (props) => {
+const ExpensesFilter = ({ onChangeFilter, currentlySelectedYear }) => {
     const dropdownChangeHandler = (e) => {
-        props.onChangeFilter(e.target.value);
+        onChangeFilter(e.target.value);
     };
 
     return (
@@ -13,7 +13,7 @@ const ExpensesFilter = (props) => {
                 <label>Filter by year</label>
                 <select
                     onChange={dropdownChangeHandler}
-                    value={props.currentlySelectedYear}
+                    value={currentlySelectedYear}
                 >
                     <option value="2022">2022</option>
                     <option value="2021">2021</option>
