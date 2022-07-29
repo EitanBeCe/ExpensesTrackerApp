@@ -2,9 +2,9 @@ import "./Expenses.css";
 import { useState } from "react";
 
 import Card from "../UI/Card";
-import ExpensesFilter from "./ExpensesFilter";
-import ExpensesList from "./ExpensesList";
-import ExpensesChart from "./ExpensesChart"
+import ExpensesFilter from "./ExpensesFilter/ExpensesFilter";
+import ExpensesList from "./ExpensesList/ExpensesList";
+import ExpensesChart from "./ExpensesChart/ExpensesChart"
 
 function Expenses({ expenses }) {
   const [filteredYear, setFilteredYear] = useState("2022");
