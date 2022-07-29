@@ -4,20 +4,20 @@ import { useState } from "react";
 import { DEFAULT_EXPENSES } from "./helpers/defaultDataExpenses";
 
 function App() {
-  const [expenses, setExpenses] = useState(DEFAULT_EXPENSES);
+    const [expenses, setExpenses] = useState(DEFAULT_EXPENSES);
 
-  const addExpenseHandler = (expense) => {
-    setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses];
-    });
-  };
+    const addExpenseHandler = (expense) => {
+        setExpenses((prevExpenses) => {
+            return [expense, ...prevExpenses];
+        });
+    };
 
-  return (
-    <div>
-      <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses expenses={expenses} />
-    </div>
-  );
+    return (
+        <div>
+            <NewExpense onAddExpense={addExpenseHandler} />
+            <Expenses expenses={expenses} />
+        </div>
+    );
 }
 
 export default App;
