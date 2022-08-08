@@ -1,8 +1,8 @@
 # ExpensesTrackerApp
 
-- A side project created for tracking your expenses.
-- Written on React.js.
-
+-   A side project created for tracking your expenses.
+-   Written on React.js.
+-   useState. CSSTransition.
 
 # Getting Started with Create React App
 

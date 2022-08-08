@@ -1,6 +1,7 @@
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm/ExpenseForm";
 import { useState } from "react";
+import { CSSTransition } from "react-transition-group";
 
 const NewExpense = ({ onAddExpense }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -23,17 +24,55 @@ const NewExpense = ({ onAddExpense }) => {
 
     return (
         <div className="new-expense">
-            {!isEditing && (
+            <CSSTransition
+                mountOnEnter
+                unmountOnExit
+                in={!isEditing}
+                timeout={300}
+                classNames={{
+                    enter: "",
+                    enterActive: "addWindowOpen",
+                    exit: "",
+                    exitActive: "addWindowClose",
+                }}
+            >
                 <button onClick={openEditExpense}>Add New Expense</button>
-            )}
-            {isEditing && (
+            </CSSTransition>
+
+            <CSSTransition
+                mountOnEnter
+                unmountOnExit
+                in={isEditing}
+                timeout={300}
+                classNames={{
+                    enter: "",
+                    enterActive: "addFormOpen",
+                    exit: "",
+                    exitActive: "addFormClose",
+                }}
+            >
                 <ExpenseForm
                     onSaveExpenseData={saveExpenseDataHandler}
                     closeEditExpense={closeEditExpense}
                 />
-            )}
+            </CSSTransition>
         </div>
     );
+
+    // Without transitions
+    // return (
+    //     <div className="new-expense">
+    //         {!isEditing && (
+    //             <button onClick={openEditExpense}>Add New Expense</button>
+    //         )}
+    //         {isEditing && (
+    //             <ExpenseForm
+    //                 onSaveExpenseData={saveExpenseDataHandler}
+    //                 closeEditExpense={closeEditExpense}
+    //             />
+    //         )}
+    //     </div>
+    // );
 };
 
 export default NewExpense;

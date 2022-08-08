@@ -1,44 +1,103 @@
 .new-expense {
-  background-color: #a892ee;
-  padding: 1rem;
-  margin: 2rem auto;
-  width: 50rem;
-  max-width: 95%;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-  animation: fadein 1s;
-  transition: all 1s ease-out;
-}
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+    background-color: #a892ee;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s;
 }
 
 .new-expense button {
-  font: inherit;
-  cursor: pointer;
-  padding: 1rem 2rem;
-  border: 1px solid #40005d;
-  background-color: #40005d;
-  color: white;
-  border-radius: 12px;
-  margin-right: 1rem;
+    font: inherit;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: 1px solid #40005d;
+    background-color: #40005d;
+    color: white;
+    border-radius: 12px;
+    margin-right: 1rem;
+    /* animation: addIn 0.3s ease-out forwards; */
 }
 
 .new-expense button:hover,
 .new-expense button:active {
-  background-color: #510674;
-  border-color: #510674;
+    background-color: #510674;
+    border-color: #510674;
 }
 
 .new-expense button.alternative {
-  color: #220131;
-  border-color: transparent;
-  background-color: transparent;
+    color: #220131;
+    border-color: transparent;
+    background-color: transparent;
 }
 
 .new-expense button.alternative:hover,
 .new-expense button.alternative:active {
-  background-color: #ddb3f8;
+    background-color: #ddb3f8;
+}
+
+.addWindowOpen {
+    animation: addIn 0.3s ease-out forwards;
+}
+.addWindowClose {
+    animation: addOut 0.3s ease-out forwards;
+}
+@keyframes addIn {
+    0% {
+        opacity: 0;
+        padding: 0 1rem;
+        margin: 0 auto;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes addOut {
+    0% {
+        opacity: 1;
+    }
+    /* 50% {
+        opacity: 0.2;
+    } */
+    100% {
+        opacity: 0;
+        height: 0;
+        padding: 0 1rem;
+        margin: 0 auto;
+    }
+}
+
+.addFormOpen {
+    animation: addFormIn 0.3s ease-out forwards;
+}
+.addFormClose {
+    animation: addFormOut 0.3s ease-out forwards;
+}
+@keyframes addFormIn {
+    0% {
+        opacity: 0;
+        /* padding: 0 1rem;
+        margin: 0 auto; */
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        height: auto;
+    }
+}
+@keyframes addFormOut {
+    0% {
+        opacity: 1;
+        height: auto;
+    }
+    100% {
+        opacity: 0;
+        height: 0;
+        /* padding: 0 1rem;
+        margin: 0 auto; */
+    }
 }
