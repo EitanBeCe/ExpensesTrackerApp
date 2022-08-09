@@ -1,6 +1,6 @@
 # ExpensesTrackerApp
 
--   A side project created for tracking your expenses.
+-   A side project created for tracking your expenses. A user can add an expense in form, or delete it(on click)
 -   Written on React.js.
 -   useState. CSSTransition.
 
