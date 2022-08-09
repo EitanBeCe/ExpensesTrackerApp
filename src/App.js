@@ -12,10 +12,19 @@ function App() {
         });
     };
 
+    const removeExpenseHandler = (id) => {
+        setExpenses((prevExpenses) =>
+            prevExpenses.filter((expense) => expense.id !== id)
+        );
+    };
+
     return (
         <div>
             <NewExpense onAddExpense={addExpenseHandler} />
-            <Expenses expenses={expenses} />
+            <Expenses
+                expenses={expenses}
+                onRemoveExpense={removeExpenseHandler}
+            />
         </div>
     );
 }

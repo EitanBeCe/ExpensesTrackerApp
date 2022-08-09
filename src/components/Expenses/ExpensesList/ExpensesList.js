@@ -1,7 +1,7 @@
 import "./ExpensesList.css";
 import ExpenseItem from "./ExpensesItem/ExpenseItem";
 
-const ExpensesList = ({ filteredExpenses }) => {
+const ExpensesList = ({ filteredExpenses, onRemoveExpense }) => {
     if (!filteredExpenses.length) {
         return (
             <h2 className="expenses-list__fallback">
@@ -18,6 +18,7 @@ const ExpensesList = ({ filteredExpenses }) => {
                     title={expense.title}
                     amount={expense.amount}
                     date={expense.date}
+                    onRemoveExpense={onRemoveExpense.bind(null, expense.id)}
                 />
             ))}
         </ul>

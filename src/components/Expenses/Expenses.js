@@ -6,8 +6,8 @@ import ExpensesFilter from "./ExpensesFilter/ExpensesFilter";
 import ExpensesList from "./ExpensesList/ExpensesList";
 import ExpensesChart from "./ExpensesChart/ExpensesChart";
 
-function Expenses({ expenses }) {
-    const [filteredYear, setFilteredYear] = useState("2022");
+function Expenses({ expenses, onRemoveExpense }) {
+    const [filteredYear, setFilteredYear] = useState("2021");
 
     const filterChangeHandler = (selectedYear) => {
         setFilteredYear(selectedYear);
@@ -26,7 +26,10 @@ function Expenses({ expenses }) {
 
             <ExpensesChart expenses={filteredExpenses} />
 
-            <ExpensesList filteredExpenses={filteredExpenses} />
+            <ExpensesList
+                filteredExpenses={filteredExpenses}
+                onRemoveExpense={onRemoveExpense}
+            />
         </Card>
     );
 }
